@@ -1,0 +1,98 @@
+hbdk-model-verifier --hbm tmp_compile_bayes_x3c/pilot_legorcnn_multitask_resize_2_day_torch_bayes_O3.hbm --model-pt tmp_output/pilot_multitask_resize2/int_infer_pilot_legorcnn_multitask_resize_2_day_torch_bayes-deploy-checkpoint-last.pt --ip 10.248.196.252
+[BAD]  --model-name	name of model to verify
+[AUTO] --model-name pilot_legorcnn_multitask_resize_2
+[OK]   --model-name pilot_legorcnn_multitask_resize_2
+----------------------------------------------------------------------
+
+06-24-2022 01:33:47 root:INFO:======> Parse cmd done
+06-24-2022 01:33:47 root:INFO:======> Check HBDK tool existence
+06-24-2022 01:33:47 root:INFO:executing cmd: hbdk-cc --version
+06-24-2022 01:33:48 root:INFO:executing cmd: hbdk-config --aarch64-link-dir
+06-24-2022 01:33:48 root:INFO:executing cmd: hbdk-config --x86-sim-link-dir
+06-24-2022 01:33:48 root:INFO:======> HBDK tools all detected
+06-24-2022 01:33:48 root:INFO:generate random binary for input: arg0[img]
+06-24-2022 01:33:48 root:INFO:======> Preprocess BPU Input Data
+06-24-2022 01:33:48 root:INFO:======> Preprocess BPU Input Data Done
+06-24-2022 01:33:48 root:INFO:======> Try to connect BPU
+06-24-2022 01:33:48 paramiko.transport:INFO:Connected (version 2.0, client dropbear_2018.76)
+06-24-2022 01:33:48 paramiko.transport:INFO:Authentication (password) failed.
+06-24-2022 01:33:48 paramiko.transport:INFO:Authentication (none) successful!
+06-24-2022 01:33:48 paramiko.transport.sftp:INFO:[chan 0] Opened sftp connection (server version 3)
+06-24-2022 01:33:48 root:INFO:======> BPU connected
+06-24-2022 01:33:48 root:INFO:Acquiring lock for model verifier on bpu
+06-24-2022 01:33:48 root:INFO:REMOTE: executing [flock -x /tmp/hbdk_model_verifier.lock sh -c 'echo The PID is $PPID.; echo Model verifier /userdata/hbmv_1f1oe718_0624013347 from /data/hou/tmp_compile_bayes_x3c_20220623/hbmv_1f1oe718_0624013347 lock on bpu has been acquired; sleep 3600']
+06-24-2022 01:33:48 root:INFO:REMOTE: The PID of the lock is 14983
+06-24-2022 01:33:48 root:INFO:REMOTE: executing [mkdir -p /userdata/hbmv_1f1oe718_0624013347]
+06-24-2022 01:33:48 root:INFO:REMOTE: command exit code is 0
+06-24-2022 01:33:48 root:INFO:REMOTE: executing [mkdir -p /userdata/hbmv_1f1oe718_0624013347/bpu_output]
+06-24-2022 01:33:48 root:INFO:REMOTE: command exit code is 0
+06-24-2022 01:33:49 root:INFO:Uploading /data/hou/tmp_compile_bayes_x3c_20220623/tmp_compile_bayes_x3c/pilot_legorcnn_multitask_resize_2_day_torch_bayes_O3.hbm to /userdata/hbmv_1f1oe718_0624013347/pilot_legorcnn_multitask_resize_2_day_torch_bayes_O3.hbm
+06-24-2022 01:33:51 root:INFO:Uploading /usr/local/lib/python3.6/site-packages/hbdk/lib64/aarch64/libhbrt_bayes_aarch64.so to /userdata/hbmv_1f1oe718_0624013347/libhbrt_bayes_aarch64.so
+06-24-2022 01:33:51 root:INFO:Uploading /usr/local/lib/python3.6/site-packages/hbdk/sbin/hbdk-run-model-bayes-aarch64 to /userdata/hbmv_1f1oe718_0624013347/hbdk-run-model-bayes-aarch64
+06-24-2022 01:33:52 root:INFO:Uploading /data/hou/tmp_compile_bayes_x3c_20220623/hbmv_1f1oe718_0624013347/bpu_input_0.yuv to /userdata/hbmv_1f1oe718_0624013347/bpu_input_0.yuv
+06-24-2022 01:33:52 root:INFO:REMOTE: executing [flock -x /tmp/hbdk_model_verifier.lock2 sh -c 'echo The PID is $PPID.; cd /userdata/hbmv_1f1oe718_0624013347 ; chmod +x libhbrt_bayes_aarch64.so ; chmod +x hbdk-run-model-bayes-aarch64 ']
+06-24-2022 01:33:52 root:INFO:REMOTE: command PID is 14987
+06-24-2022 01:33:52 root:INFO:REMOTE: command exit code is 0
+06-24-2022 01:33:52 root:INFO:REMOTE: executing [flock -x /tmp/hbdk_model_verifier.lock2 sh -c 'echo The PID is $PPID.; echo BPU execution begins; cd /userdata/hbmv_1f1oe718_0624013347 ; echo the local work path is /data/hou/tmp_compile_bayes_x3c_20220623/hbmv_1f1oe718_0624013347 ; ulimit -c 0; sync ; echo BPU model execution begins; if [ -f "/etc/profile" ]; then
+ source /etc/profile 
+ fi;export HBRT_LOG_LEVEL=0 && env  ./hbdk-run-model-bayes-aarch64 -i bpu_input_0.yuv -f pilot_legorcnn_multitask_resize_2_day_torch_bayes_O3.hbm -n pilot_legorcnn_multitask_resize_2 --yuv-img-size 640x960 -d 0x0 -z 640x960 -o /userdata/hbmv_1f1oe718_0624013347/bpu_output && echo BPU model execution ends && rm -rf libhbrt_bayes_aarch64.so hbdk-run-model-bayes-aarch64 bpu_input_0.yuv && echo Begin to compress model output && tar -czvf bpu_output.tar.gz bpu_output' && rm -rf bpu_output ;exit_code=$?; echo BPU execution ends; exit $exit_code]
+06-24-2022 01:33:52 root:INFO:REMOTE: command PID is 14991
+06-24-2022 01:33:54 root:INFO:REMOTE: command exit code is 0
+06-24-2022 01:33:54 root:INFO:Downloading /userdata/hbmv_1f1oe718_0624013347/bpu_output.tar.gz to /data/hou/tmp_compile_bayes_x3c_20220623/hbmv_1f1oe718_0624013347/bpu_output.tar.gz
+06-24-2022 01:33:54 root:INFO:REMOTE: Sending SIGHUP for "Verifier Global Lock"
+06-24-2022 01:33:54 root:INFO:REMOTE: Killing pid 14983 for "Verifier Global Lock"
+06-24-2022 01:33:54 root:INFO:REMOTE: executing [ rm -rf /userdata/hbmv_1f1oe718_0624013347; ]
+06-24-2022 01:33:54 root:INFO:REMOTE: command exit code is 0
+06-24-2022 01:33:54 root:INFO:Verifier Total Time on dev board with connection time (including BPU, CPU, IO, network and time to wait for lock): 5.731795 ms
+06-24-2022 01:33:54 root:INFO:Verifier Total Time on dev board without connection time (including BPU, CPU, IO and network time): 5.296957 ms
+06-24-2022 01:33:54 root:INFO:
+
+======> Model execution time (including BPU and CPU): 7.409870 ms
+======> BPU execution time (BPU function call consumed time): 4.253210 ms
+======> CPU execution time (including context switch and cpu operator): 3.156670 ms
+
+06-24-2022 01:33:54 root:INFO:executing cmd: tar -xvf bpu_output.tar.gz
+06-24-2022 01:33:54 root:INFO:executing cmd: rm bpu_output.tar.gz
+06-24-2022 01:33:54 root:INFO:======> Preprocess Framework Input Data
+06-24-2022 01:34:00 root:INFO:======> Preprocess Framework Input Data Done
+06-24-2022 01:34:00 root:INFO:======> Run Model by hbdk-pred
+06-24-2022 01:34:00 root:INFO:executing cmd: hbdk-pred  -s 1x640x960x3 -o /data/hou/tmp_compile_bayes_x3c_20220623/hbmv_1f1oe718_0624013347/framework_output --gen-txt-output  -b /data/hou/tmp_compile_bayes_x3c_20220623/hbmv_1f1oe718_0624013347/framework_input_0.bin --march bayes -m /data/hou/tmp_compile_bayes_x3c_20220623/tmp_output/pilot_multitask_resize2/int_infer_pilot_legorcnn_multitask_resize_2_day_torch_bayes-deploy-checkpoint-last.pt -f torch  -n arg0[img] -t int8
+06-24-2022 01:34:18 root:WARNING:receive following warning from hbdk-pred
+06-24-2022 01:34:18 root:INFO:/usr/local/lib64/python3.6/site-packages/torch/jit/_trace.py:730: UserWarning: The input to trace is already a ScriptModule, tracing it is a no-op. Returning the object as is.
+  "The input to trace is already a ScriptModule, tracing it is a no-op. Returning the object as is."
+
+06-24-2022 01:34:18 root:INFO:======> Compare Results on BPU Board vs. Framework
+06-24-2022 01:34:18 root:INFO: [SUCCESS] output file [hbdk_output__cyclist_detection_roi_split_head_box_reg_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:18 root:INFO: [SUCCESS] output file [hbdk_output__cyclist_anchor_pred__dpp_hz_detection_post_process_v1_torch_native.txt] is same.
+06-24-2022 01:34:18 root:INFO: [SUCCESS] output file [hbdk_output__rear_part_classification_roi_split_head_box_score_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:18 root:INFO: [SUCCESS] output file [hbdk_output__vehicle_occlusion_classification_roi_split_head_box_score_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:18 root:INFO: [SUCCESS] output file [hbdk_output__rear_plate_detection_roi_head_box_score_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:18 root:INFO: [SUCCESS] output file [hbdk_output__person_anchor_pred__dpp_hz_detection_post_process_v1_torch_native.txt] is same.
+06-24-2022 01:34:18 root:INFO: [SUCCESS] output file [hbdk_output__person_face_detection_roi_head_box_score_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:18 root:INFO: [SUCCESS] output file [hbdk_output__vehicle_category_classification_roi_split_head_box_score_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:18 root:INFO: [SUCCESS] output file [hbdk_output__vehicle_ground_line_roi_head_box_reg_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:18 root:INFO: [SUCCESS] output file [hbdk_output__vehicle_wheel_kps_roi_split_head_pos_offset_out_block_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:18 root:INFO: [SUCCESS] output file [hbdk_output__person_occlusion_classification_roi_split_head_box_score_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:18 root:INFO: [SUCCESS] output file [hbdk_output__person_pose_classification_roi_split_head_box_score_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:18 root:INFO: [SUCCESS] output file [hbdk_output__rear_anchor_pred__dpp_hz_detection_post_process_v1_torch_native.txt] is same.
+06-24-2022 01:34:19 root:INFO: [SUCCESS] output file [hbdk_output__lane_segmentation_head_aten_argmax_arg.txt] is same.
+06-24-2022 01:34:19 root:INFO: [SUCCESS] output file [hbdk_output__vehicle_wheel_detection_roi_split_head_box_score_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:19 root:INFO: [SUCCESS] output file [hbdk_output__vehicle_category_classification_roi_split_head_conv1_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:19 root:INFO: [SUCCESS] output file [hbdk_output__vehicle_anchor_pred__dpp_hz_detection_post_process_v1_torch_native.txt] is same.
+06-24-2022 01:34:19 root:INFO: [SUCCESS] output file [hbdk_output__rear_plate_detection_roi_head_box_reg_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:20 root:INFO: [SUCCESS] output file [hbdk_output__person_face_detection_roi_head_box_reg_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:20 root:INFO: [SUCCESS] output file [hbdk_output__vehicle_ground_line_roi_head_box_score_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:20 root:INFO: [SUCCESS] output file [hbdk_output__rear_occlusion_classification_roi_split_head_box_score_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:20 root:INFO: [SUCCESS] output file [hbdk_output__person_orientation_classification_roi_split_head_box_score_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:20 root:INFO: [SUCCESS] output file [hbdk_output__default_segmentation_head_aten_argmax_arg.txt] is same.
+06-24-2022 01:34:20 root:INFO: [SUCCESS] output file [hbdk_output__person_detection_roi_split_head_box_reg_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:20 root:INFO: [SUCCESS] output file [hbdk_output__rear_detection_roi_split_head_box_reg_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:21 root:INFO: [SUCCESS] output file [hbdk_output__vehicle_wheel_detection_roi_split_head_box_reg_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:21 root:INFO: [SUCCESS] output file [hbdk_output__vehicle_detection_roi_split_head_box_reg_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:21 root:INFO: [SUCCESS] output file [hbdk_output__vehicle_wheel_kps_roi_split_head_label_out_block_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:21 root:INFO: [SUCCESS] output file [hbdk_output__person_detection_roi_split_head_box_score_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:21 root:INFO: [SUCCESS] output file [hbdk_output__vehicle_detection_roi_split_head_box_score_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:21 root:INFO: [SUCCESS] output file [hbdk_output__vehicle_truncation_classification_roi_split_head_box_score_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:21 root:INFO: [SUCCESS] output file [hbdk_output__person_pose_classification_roi_split_head_conv1_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:21 root:INFO: [SUCCESS] output file [hbdk_output__cyclist_detection_roi_split_head_box_score_0_hz_conv2d.txt] is same.
+06-24-2022 01:34:21 root:INFO: [SUCCESS] output file [hbdk_output__rear_detection_roi_split_head_box_score_0_hz_conv2d.txt] is same.

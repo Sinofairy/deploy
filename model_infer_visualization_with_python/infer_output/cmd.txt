@@ -1,0 +1,1 @@
+./hrt_model_exec infer --model_file=model/pilot_legorcnn_multitask_resize_2_day_torch_bayes_O3.hbm --input_file=data/11_1641549436268.jpg --enable_dump=true --dump_format=txt

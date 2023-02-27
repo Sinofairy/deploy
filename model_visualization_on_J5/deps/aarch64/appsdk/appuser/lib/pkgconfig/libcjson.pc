@@ -1,0 +1,10 @@
+libdir=/home/jenkins/workspace/LNX5.10_GCC9.3_PL3.0_WB_20220310/repo_init/tmp/out/tmprootfs/lib
+includedir=/home/jenkins/workspace/LNX5.10_GCC9.3_PL3.0_WB_20220310/repo_init/tmp/out/tmprootfs/include
+
+Name: libcjson
+Version: 1.7.14
+Description: Ultralightweight JSON parser in ANSI C
+URL: https://github.com/DaveGamble/cJSON
+Libs: -L${libdir} -lcjson
+Libs.private: -lm
+Cflags: -I${includedir} -I${includedir}/cjson

@@ -1,0 +1,10 @@
+prefix=/home/users/kai.lu/sdc/code/zeromq_arm
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libzmq
+Description: 0MQ c++ library
+Version: 3.2.5
+Libs: -L${libdir} -lzmq
+Cflags: -I${includedir}

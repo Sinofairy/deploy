@@ -1,0 +1,7 @@
+{
+  "ip_port": "tcp://*:6680",
+  "data_type": 3,
+  "height": 1920,
+  "width": 1080,
+  "with_image_name": true
+}

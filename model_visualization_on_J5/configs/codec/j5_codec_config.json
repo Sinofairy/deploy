@@ -1,0 +1,11 @@
+{
+  "codec_chn_num": 1,
+  "chn_0": {
+    "chn_id": 0,
+    "codec_type": 3,
+    "image_width": 1920,
+    "image_height": 1080,
+    "frame_buf_count": 3,
+    "jpeg_quality": 80
+  }
+}

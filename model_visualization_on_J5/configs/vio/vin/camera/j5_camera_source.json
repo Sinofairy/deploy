@@ -1,0 +1,5 @@
+{
+  "cam_index": 1,
+  "cam_cfg_file": "configs/vio/vin/camera/hb_j5dev.json",
+  "frame_count": -1
+}

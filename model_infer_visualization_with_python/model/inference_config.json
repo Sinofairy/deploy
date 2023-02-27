@@ -1,0 +1,14 @@
+{
+    "model_file_path": "./configs/model/multitask_kitti.hbm", //pilot_legorcnn_multitask_resize_2_day_torch_bayes_O3.hbm",
+    "pyramid_level": 0,
+    "model_detect_class": {
+        "Car": 1,
+        "Van": 2,
+        "Truck": 3,
+        "Pedestrian": 4,
+        "Person_setting": 5,
+        "Cyclist": 6,
+        "Tram": 7,
+        "Misc": 8
+    }
+}
