@@ -1,7 +1,11 @@
 # Deploy  模型部署到J5，附性能分析
 
 # 一、 性能分析使用说明 performance_analysis_tool
-  https://li.feishu.cn/docs/doccnf4svbcUg5lj81hWWecEyPb
+  hrt_model_exec工具介绍
+  hrt_model_exec 是一个模型执行工具，可直接在开发板上评测模型的推理性能、获取模型信息。 一方面可以让用户拿到模型时实际了解模型真实性能； 另一方面也可以帮助用户了解模型可以做到的速度极限，对于应用调优的目标极限具有指导意义。
+  hrt_model_exec 工具分别提供了模型推理 infer、模型性能分析 perf 和查看模型信息 model_info 三类功能，具体介绍如下：
+
+  https://developer.horizon.ai/api/v1/fileData/horizon_j5_open_explorer_v1_1_33_cn_doc/runtime/source/tool_introduction/source/hrt_model_exec.html?highlight=hrt_model_exec
 
 # 二、 网络回灌模式的J5模型可视化 model_visualization_on_J5
   使用方法见子文件自述文档
