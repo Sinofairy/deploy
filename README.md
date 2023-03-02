@@ -14,7 +14,7 @@
   
   跟地平线内部各工具版本要对齐 
   编译工具: hbdk_model_verifier-3.28.2-py3-none-linux_x86_64.whl
-  docker环境:reg-ai.chehejia.com/j5/hat_pilot_development_toolkit:1.1.1 
+  docker环境:./j5/hat_pilot_development_toolkit:1.1.1 
   工作目录: /release_package
   编译命令为:
   python3 -u projects/pilot/model_release/upload_compile_model.py --pub-config projects/pilot/model_release/cfg/pub_cfg_x3c.py
